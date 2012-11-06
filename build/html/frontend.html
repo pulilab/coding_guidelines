@@ -55,9 +55,59 @@
 <p>We recommend using <a class="reference external" href="https://github.com/pulilab/lineman">lineman</a></p>
 <p>It offers several handy features for front-end development:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://lesscss.org/">less</a> autocompiling</li>
-<li>browser autoreloading</li>
+<li>Browser auto-reloading on file changes</li>
+<li>Immediately compile CoffeeScript, <a class="reference external" href="http://lesscss.org/">Less</a>, and client-side templates as you edit source files</li>
+<li>Provide a development server for fast feedback</li>
+<li>Concatenate &amp; minify all your CSS &amp; JavaScript for production</li>
+<li>Run specs on demand with <cite>lineman spec</cite> using <a class="reference external" href="https://github.com/airportyh/testem">Testem</a></li>
+<li>Run specs with output suitable for your CI server using <cite>lineman spec-ci</cite></li>
 </ul>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>npm install -g https://github.com/pulilab/lineman/zipball/master
+</pre></div>
+</div>
+<p>This installs the <cite>lineman</cite> command.</p>
+<p>For browser auto-reloading, you should install a <a class="reference external" href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions">livereload extension</a></p>
+</div>
+<div class="section" id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h3>
+<p>To start a new project</p>
+<div class="highlight-bash"><div class="highlight"><pre>lineman new &lt;project_name&gt;
+</pre></div>
+</div>
+<p>This generates our preferred directory structure in the <cite>app</cite> directory.</p>
+<p>To serve it for your browser run</p>
+<div class="highlight-bash"><div class="highlight"><pre>lineman run
+</pre></div>
+</div>
+<p>To run your tests run</p>
+<div class="highlight-bash"><div class="highlight"><pre>lineman spec
+</pre></div>
+</div>
+<div class="section" id="handlebar-templates">
+<h4>Handlebar templates<a class="headerlink" href="#handlebar-templates" title="Permalink to this headline">¶</a></h4>
+<p>Lineman supports <a class="reference external" href="http://underscorejs.org/">underscore</a> and <a class="reference external" href="http://handlebarsjs.com/">handlebars</a> templates. Handlebars templates should have one of the following file extensions:</p>
+<ul class="simple">
+<li>.hb</li>
+<li>.handlebar</li>
+<li>.handlebars</li>
+</ul>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>The generated and served files are in the <cite>generated</cite> directory. If you have some mysterious problem, you should check out the generated files first.</p>
+</div>
+</div>
+<div class="section" id="javascript-libraries">
+<h2>Javascript libraries<a class="headerlink" href="#javascript-libraries" title="Permalink to this headline">¶</a></h2>
+<p>We recommend using one of the following JS frameworks:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://backbonejs.org/">Backbone</a> with <a class="reference external" href="http://marionettejs.com/">Marionette</a>, <a class="reference external" href="https://github.com/PaulUithol/Backbone-relational">Relational</a> etc</li>
+<li><a class="reference external" href="https://github.com/PaulUithol/Backbone-relational">Ember</a></li>
+</ul>
+<p>Moreover, we have <a class="reference external" href="http://groups.diigo.com/group/pulilab/content/tag/javascript">a continuously growing collection of articles to read</a>.</p>
 </div>
 </div>
 
@@ -70,7 +120,16 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Web Frontend Guidelines</a><ul>
-<li><a class="reference internal" href="#frontend-tooling">Frontend Tooling</a></li>
+<li><a class="reference internal" href="#frontend-tooling">Frontend Tooling</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#handlebar-templates">Handlebar templates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#javascript-libraries">Javascript libraries</a></li>
 </ul>
 </li>
 </ul>
