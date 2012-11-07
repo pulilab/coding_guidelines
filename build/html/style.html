@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style Guide &mdash; Pulilab Coding Guidelines 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Pulilab Coding Guidelines 0.1 documentation" href="index.html" />
+    <link rel="next" title="Django Guidelines" href="django.html" />
+    <link rel="prev" title="Welcome to Pulilab Coding Guidelines’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="django.html" title="Django Guidelines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Pulilab Coding Guidelines’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Pulilab Coding Guidelines 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="style-guide">
+<h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Our style guide is based on <a class="reference external" href="http://mozweb.readthedocs.org/en/latest/js-style.html">Mozilla&#8217;s</a>, <a class="reference external" href="https://github.com/adobe/brackets/wiki/Brackets-Coding-Conventions">Bracket&#8217;s</a> and <a class="reference external" href="http://www.pocoo.org/internal/styleguide/">Pocoo&#8217;s</a> guides.</p>
+</div>
+<div class="section" id="html">
+<h2>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h2>
+<p>Classes and id&#8217;s in HTML use all lower-case with dashes (-), not camelCase or under_scores:</p>
+<p>Do this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;search-results&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;title-wrapper&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;searchResults&quot;</span><span class="nt">&gt;</span>  // Don&#39;t use camel-case for ids
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;title_wrapper&quot;</span><span class="nt">&gt;</span> // Don&#39;t use underscore
+</pre></div>
+</div>
+<p>Always use double quotes (&#8221;) to border attributes.</p>
+<p>Do this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;searchResults&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;searchResults&#39;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="javascript">
+<h2>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Use 4 space indents (spaces, no tabs)</p>
+</li>
+<li><p class="first">Must pass JSLint. Meaningful defaults for JSLint is</p>
+<blockquote>
+<div><div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */</span>
+<span class="cm">/*global $ */</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The above recommendation has one caveat.</p>
+<p class="last">JSLint warns about lines consisting entirely of whitespace, but we ignore those warnings. The JSLint feature built into Brackets filters out these warnings automatically.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">JSHint instead? we might configure it with a single .jshintrc file</p>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Line length</dt>
+<dd><p class="first last"><strong>79</strong> characters with a soft limit of 84 if absolutely necessary. Try to avoid too deeply nested code by cleverly placing break, continue and return statements.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">General Naming and Syntax</p>
+<blockquote>
+<div><p>Variable and function names use camelCase (not under_scores):</p>
+<p>Do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editorHolder</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">getText</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">editor_holder</span><span class="p">;</span> <span class="c1">// Don&#39;t use underscore!</span>
+<span class="kd">function</span> <span class="nx">get_text</span><span class="p">();</span> <span class="c1">// Don&#39;t use underscore!</span>
+</pre></div>
+</div>
+<p>Never assign multiple variables on the same line.</p>
+<p>Don&#8217;t do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="s1">&#39;wtf&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Private variables</p>
+<blockquote>
+<div><p>Use _ prefixes on private variables/methods:
+Do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">_privateVar</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">_privateFunction</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">privateVar</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="c1">// Private vars should start with _</span>
+<span class="kd">function</span> <span class="nx">privateFunction</span><span class="p">()</span> <span class="c1">// Private functions should start with _</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Arrays and Objects</p>
+<blockquote>
+<div><p>Use <cite>[]</cite> to assign a new array, not <cite>new Array()</cite>.</p>
+<p>Use <cite>{}</cite> for new objects, as well.</p>
+<p>Two scenarios for <cite>[]</cite> (one can be on the same line, with discretion and the other not so much):</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Okay on a single line</span>
+<span class="kd">var</span> <span class="nx">stuff</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+<span class="c1">// Never on a single line, multiple only</span>
+<span class="kd">var</span> <span class="nx">longerStuff</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;some longer stuff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;other longer stuff&#39;</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Working with jQuery</p>
+<blockquote>
+<div><p>Use <cite>$</cite> prefixes on variables referring to jQuery objects:</p>
+<p>Do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">$sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#sidebar&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">sidebar</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#sidebar&quot;</span><span class="p">);</span> <span class="c1">// Use &#39;$&#39; to prefix variables referring to jQuery objects</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Use semicolons:</dt>
+<dd><p class="first">Do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">someVar</span><span class="p">;</span>
+<span class="nx">someVar</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">someVar</span>   <span class="c1">// Missing semicolon!</span>
+<span class="nx">someVar</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>   <span class="c1">// Missing semicolon!</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Operators</dt>
+<dd><p class="first">Always use <cite>===</cite> for comparison. The only exceptions are when testing for <cite>null</cite> and <cite>undefined</cite></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;value can not be undefined&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Try to avoid ternary, especially if it would use multiple lines:</p>
+<p>This is OK:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="k">return</span> <span class="nx">user</span><span class="p">.</span><span class="nx">isLoggedIn</span> <span class="o">?</span> <span class="s1">&#39;yay&#39;</span> <span class="o">:</span> <span class="s1">&#39;boo&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">lastLogin</span> <span class="o">&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="mi">16000</span><span class="p">)</span> <span class="o">?</span> <span class="nx">user</span><span class="p">.</span><span class="nx">lastLogin</span> <span class="o">-</span> <span class="mi">24000</span> <span class="o">:</span> <span class="s1">&#39;wut&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Quoting</dt>
+<dd><p class="first">Use double quotes in JavaScript. If a JavaScript string literal contains code within it, use single quotes within the string to avoid escaping.</p>
+<p>Do this:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">aString</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="nx">someFunction</span><span class="p">(</span><span class="s2">&quot;This is awesome!&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">htmlCode</span> <span class="o">=</span> <span class="s2">&quot;&lt;div id=&#39;some-id&#39; class=&#39;some-class&#39;&gt;&lt;/div&gt;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Not this:</p>
+<div class="last highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">aString</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span><span class="p">;</span> <span class="c1">// Use double quotes!</span>
+<span class="nx">someFunction</span><span class="p">(</span><span class="s1">&#39;This is awesome!&#39;</span><span class="p">);</span> <span class="c1">// Use double quotes!</span>
+
+<span class="kd">var</span> <span class="nx">htmlCode</span> <span class="o">=</span> <span class="s1">&#39;&lt;div id=&quot;some-id&quot; class=&quot;some-class&quot;&gt;&lt;/div&gt;&#39;</span><span class="p">;</span> <span class="c1">// Use double quotes!</span>
+<span class="kd">var</span> <span class="nx">htmlCode</span> <span class="o">=</span> <span class="s2">&quot;&lt;div id=\&quot;some-id\&quot; class=\&quot;some-class\&quot;&gt;&lt;/div&gt;&quot;</span><span class="p">;</span> <span class="c1">// Within string, use single quotes!</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Commenting</dt>
+<dd><p class="first">All comments should be C++ single line style</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">//comment.</span>
+</pre></div>
+</div>
+<p>Even multiline comments should use // at the start of each line</p>
+<p>Use C style <cite>/* comments */</cite> for notices at the top and bottom of the file</p>
+<p>Annotations should use the <cite>/** annotation */</cite> style</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/** This is my function</span>
+
+<span class="cm">@param arg1 string The first argument</span>
+<span class="cm">@return boolean</span>
+<span class="cm">*/</span>
+<span class="kd">var</span> <span class="nx">myFunc</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="last">Annotate all functions</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="css">
+<h2>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h2>
+<p>Use <a class="reference external" href="http://lesscss.org/">Less</a></p>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference external" href="http://www.pocoo.org/internal/styleguide/">Pocoo style guide</a></p>
+<p>In addition:</p>
+<ul class="simple">
+<li>Lint/PEP-8 compliance (Use <a class="reference external" href="http://pypi.python.org/pypi/pylint">Pylint</a>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Style Guide</a><ul>
+<li><a class="reference internal" href="#html">HTML</a></li>
+<li><a class="reference internal" href="#javascript">Javascript</a></li>
+<li><a class="reference internal" href="#css">CSS</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Pulilab Coding Guidelines&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="django.html"
+                        title="next chapter">Django Guidelines</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/style.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="django.html" title="Django Guidelines"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Pulilab Coding Guidelines’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Pulilab Coding Guidelines 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Pulilab LLC.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

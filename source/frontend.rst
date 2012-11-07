@@ -73,6 +73,11 @@ ________________
 
 The generated and served files are in the `generated` directory. If you have some mysterious problem, you should check out the generated files first.
 
+Testing
+--------
+
+Use lineman's builtin features. See the Tooling section above for details.
+
 Javascript libraries
 ---------------------
 

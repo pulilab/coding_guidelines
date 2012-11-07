@@ -28,7 +28,7 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Pulilab Coding Guidelines 0.1 documentation" href="index.html" />
     <link rel="next" title="Web Frontend Guidelines" href="frontend.html" />
-    <link rel="prev" title="Welcome to Pulilab Coding Guidelines’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Style Guide" href="style.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,7 +41,7 @@
           <a href="frontend.html" title="Web Frontend Guidelines"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to Pulilab Coding Guidelines’s documentation!"
+          <a href="style.html" title="Style Guide"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Pulilab Coding Guidelines 0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -54,18 +54,47 @@
             
   <div class="section" id="django-guidelines">
 <h1>Django Guidelines<a class="headerlink" href="#django-guidelines" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="project-skeleton">
-<h2>Project skeleton<a class="headerlink" href="#project-skeleton" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-skeletons">
+<h2>Project skeletons<a class="headerlink" href="#project-skeletons" title="Permalink to this headline">¶</a></h2>
 <p>The recommended project skeleton to be used for django projects can be found in <a class="reference external" href="https://github.com/pulilab/django-skel2">our django-skel2</a> repo.</p>
-<p>To use it simply run the following command when starting a new project:</p>
-<div class="highlight-bash"><div class="highlight"><pre>django-admin.py startproject --template https://github.com/pulilab/django-skel2/zipball/pulilab --extension py,md,ini YOUR_PROJECT_NAME
-</pre></div>
-</div>
-<p>This will start a new project with some feature-rich settings in <cite>YOUR_PROJECT_NAME</cite> directory.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Requires django 1.4 for project creation.</p>
 </div>
+<p>The following commands will start a new project with some feature-rich settings in <cite>YOUR_PROJECT_NAME</cite> directory.</p>
+<div class="section" id="for-normal-django-projects">
+<h3>For normal django projects<a class="headerlink" href="#for-normal-django-projects" title="Permalink to this headline">¶</a></h3>
+<p>To use it simply run the following command when starting a new project:</p>
+<div class="highlight-bash"><div class="highlight"><pre>django-admin.py startproject --template https://github.com/pulilab/django-skel2/zipball/pulilab --extension py,md,ini YOUR_PROJECT_NAME
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-appengine-projects">
+<h3>For appengine projects<a class="headerlink" href="#for-appengine-projects" title="Permalink to this headline">¶</a></h3>
+<p>To be developed.</p>
+</div>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Likely, as time goes by, some other programmers will have to read and understand your code. As a result, try to follow these guidelines as well as you can!</p>
+</div>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<p>Use fabric. There are pre-written fabric script in our project templates.</p>
+</div>
+<div class="section" id="blogs-to-follow">
+<h2>Blogs to follow<a class="headerlink" href="#blogs-to-follow" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.djangoproject.com/rss/community/">The django community aggregator</a></li>
+<li><a class="reference external" href="http://groups.diigo.com/group/pulilab/content/tag/django">Our collection of django related links</a></li>
+<li><a class="reference external" href="http://www.djangopackages.com/feeds/packages/latest/rss/">Djangopackages&#8217; RSS feed</a></li>
+</ul>
 </div>
 </div>
 
@@ -78,14 +107,22 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Django Guidelines</a><ul>
-<li><a class="reference internal" href="#project-skeleton">Project skeleton</a></li>
+<li><a class="reference internal" href="#project-skeletons">Project skeletons</a><ul>
+<li><a class="reference internal" href="#for-normal-django-projects">For normal django projects</a></li>
+<li><a class="reference internal" href="#for-appengine-projects">For appengine projects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#structure">Structure</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+<li><a class="reference internal" href="#deployment">Deployment</a></li>
+<li><a class="reference internal" href="#blogs-to-follow">Blogs to follow</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Pulilab Coding Guidelines&#8217;s documentation!</a></p>
+  <p class="topless"><a href="style.html"
+                        title="previous chapter">Style Guide</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="frontend.html"
                         title="next chapter">Web Frontend Guidelines</a></p>
@@ -121,7 +158,7 @@
           <a href="frontend.html" title="Web Frontend Guidelines"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to Pulilab Coding Guidelines’s documentation!"
+          <a href="style.html" title="Style Guide"
              >previous</a> |</li>
         <li><a href="index.html">Pulilab Coding Guidelines 0.1 documentation</a> &raquo;</li> 
       </ul>
